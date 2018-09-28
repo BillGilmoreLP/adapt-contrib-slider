@@ -1,9 +1,9 @@
-.slider-component {
-    .slider-holder {
+.slider {
+    .slider__slider-holder {
         padding-bottom: 0;
         .no-select;
     }
-    .slider-scale-numbers {
+    .slider__scale-numbers {
         position: relative;
         margin: 45px 21px -7px;
         .dir-rtl & {
@@ -14,7 +14,7 @@
             -o-transform: rotateY(180deg);
         }
     }
-    .slider-scale-number {
+    .slider__scale-number {
         position: absolute;
         width: 50px;
         top: -32px;
@@ -31,11 +31,11 @@
             -o-transform: rotateY(180deg);
         }
     }
-    .slider-scale-labels {
+    .slider__scale-labels {
         margin: 2px 0;
         height: 20px;
     }
-    .slider-scale-start {
+    .slider__scale-start {
         display: inline-block;
         float: left;
         height: 30px;
@@ -44,7 +44,7 @@
             float: right;
         }
     }
-    .slider-scale-end {
+    .slider__scale-end {
         display: inline-block;
         float: right;
         height: 30px;
@@ -53,10 +53,10 @@
             float: left;
         }
     }
-    .slider-scaler-wrapper {
+    .slider__scaler-wrapper {
         margin: 0 21px; // half width of rangeslider handle
         min-height: 50px;
-        .slider-scaler {
+        .slider__scaler {
             width: 100%;
             height: 2px;
             background-color: @foreground-color;
@@ -70,7 +70,7 @@
         }
     }
     .slider-model-answer,
-    .slider-scale-marker {
+    .slider__scale-marker {
         display: none;
         position: absolute;
         height: 30px;
@@ -86,7 +86,7 @@
         background-color: @item-color;
         box-shadow: 0 3px 6px rgba(0,0,0,0.5);
     }
-    .slider-scale-marker.display-block {
+    .slider__scale-marker.display-block {
         display: block;
         .dir-rtl & {
             margin-right: -15px;
@@ -97,7 +97,7 @@
             -o-transform: rotateY(180deg);
         }
     }
-    .slider-line {
+    .slider__line {
         display: block;
         width: 2px;
         height: 13px;
@@ -107,16 +107,16 @@
         z-index: 0;
         margin-left: -2px;
     }
-    .slider-scale-start-marker {
+    .slider__scaler-start-marker {
         left: 0;
     }
-    .slider-scale-end-marker {
+    .slider__scaler-end-marker {
         left: 100%;
     }
-    .slider-background {
+    .slider__background {
         position: relative;
     }
-    .slider-answer {
+    .slider__answer {
         display: none;
         position: absolute;
         height: 26px;
@@ -132,8 +132,8 @@
     }
 }
 // reset rangeslider styles
-.slider-widget {
-    .slider-holder {
+.slider__widget {
+    .slider__slider-holder {
         .rangeslider__handle {
             background-image: none;
             border: none;
@@ -172,30 +172,30 @@
             }
         }
         // other styles
-        .slider-item {
+        .slider__item {
             direction: ltr; // force direction to fix missing rangeslider rtl support
         }
     }
 }
-.slider-widget.show-user-answer.correct {
-    .slider-scale-marker {
+.slider__widget.show-user-answer.correct {
+    .slider__scale-marker {
         background-color: @icon-correct-color;
     }
     .rangeslider__fill {
         background-color: @icon-correct-color;
     }
 }
-.slider-widget.show-user-answer.incorrect {
-    .slider-scale-marker {
+.slider__widget.show-user-answer.incorrect {
+    .slider__scale-marker {
         background-color: @icon-incorrect-color;
     }
     .rangeslider__fill {
         background-color: @icon-incorrect-color;
     }
 }
-.slider-widget.show-correct-answer {
+.slider__widget.show-correct-answer {
     .slider-model-answer,
-    .slider-scale-marker {
+    .slider__scale-marker {
         background-color: @icon-correct-color;
         .dir-rtl & {
             transform: rotateY(180deg);
@@ -212,7 +212,7 @@
 // assessment adds no-marking class to article to hide marking icons
 .no-marking {
     .component-inner .component-widget.disabled.submitted.complete .rangeslider__fill,
-    .component-inner .component-widget.disabled.submitted.complete .slider-scale-marker {
+    .component-inner .component-widget.disabled.submitted.complete .slider__scale-marker {
         color: @item-text-disabled-color;
         background-color: @item-disabled-color;
     }
