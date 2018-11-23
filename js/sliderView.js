@@ -239,10 +239,14 @@ define([
 
         showScale: function () {
             var $markers = this.$('.slider-markers').empty();
+
             if (this.model.get('_showScale') === false) {
                 $markers.eq(0).css({display: 'none'});
                 this.$('.slider-scale-numbers *:not(".slider-scale-marker")').css(
                     this.model.get('_showScaleIndicator') ? {visibility: 'hidden'} : {display: 'none'}
+                );
+                this.$('.slider-scale-numbers .slider-modelranges').css(
+                    this.model.get('_showScaleIndicator') ? {visibility: 'visible'} : {display: 'none'}
                 );
                 return;
             }
